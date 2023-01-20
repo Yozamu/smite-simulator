@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Home() {
+const Home = ({ foo, bar }) => {
   return (
     <>
       <Head>
@@ -9,9 +9,20 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          Home page
+          Home page - {foo} - {bar}
         </div>
       </main>
     </>
   )
 }
+
+export async function getStaticProps() {
+  const { foo, bar } = process.env;
+  return {
+    props: {
+      foo, bar
+    },
+  };
+}
+
+export default Home;
