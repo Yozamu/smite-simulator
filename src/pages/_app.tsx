@@ -5,7 +5,7 @@ import '../styles/globals.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#777777',
+      main: '#dddddd',
     },
   },
 });
