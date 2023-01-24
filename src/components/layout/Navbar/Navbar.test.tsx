@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Navbar from './Navbar';
-import { mockNavbarProps } from './Navbar.mocks';
 
 test('Some test', () => {
-  render(<Navbar {...mockNavbarProps.base} />);
+  render(<Navbar />);
   expect(screen.getByText('Hello world!')).toBeInTheDocument();
 });
