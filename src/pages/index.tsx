@@ -39,8 +39,12 @@ const Home = () => {
       </Head>
       <main>
         <div>Home page</div>
-        <Button onClick={fetchGods}>Log gods</Button>
-        <Button onClick={fetchItems}>Log items</Button>
+        <Button onClick={fetchGods} variant="contained">
+          Log gods
+        </Button>
+        <Button onClick={fetchItems} variant="contained" color="secondary">
+          Log items
+        </Button>
       </main>
     </>
   );

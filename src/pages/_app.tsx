@@ -5,7 +5,10 @@ import '../styles/globals.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#dddddd',
+      main: '#071325',
+    },
+    secondary: {
+      main: '#bb8218',
     },
   },
 });

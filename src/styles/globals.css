@@ -1,8 +1,9 @@
 :root {
-  --main-color: #dddddd;
-  --background-color: #071325;
+  --main-color: #242424;
+  --secondary-color: #bb8218;
+  --white: #dddddd;
 
   margin-top: 100px;
-  color: var(--main-color);
-  background-color: var(--background-color);
+  color: var(--white);
+  background-color: var(--main-color);
 }
