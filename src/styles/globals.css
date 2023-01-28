@@ -1,6 +1,8 @@
 :root {
   --main-color: #242424;
+  --main-color-light: #363636;
   --secondary-color: #bb8218;
+  --navbar-color: #05111e;
   --white: #dddddd;
 
   margin-top: 100px;

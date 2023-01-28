@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BaseProps } from '../types/BaseProps';
+import { BaseProps } from '../types/baseProps';
 
 type TemplateProps = BaseProps & {
   sampleText?: string;
