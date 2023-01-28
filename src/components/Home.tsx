@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
       {god && (
         <>
           <SelectedGod god={god} />
-          <GodAbilities />
+          <GodAbilities god={god} />
           <SelectedItems />
         </>
       )}

@@ -35,9 +35,6 @@ export type God = {
   PhysicalPowerPerLevel: number;
   // AA
   basicAttack: {
-    menuitems: {
-      [{ description: string, value: string }];
-      [{ description: string, value: string }];
-    };
+    itemDescription: { menuitems: [{ description: string; value: string }, { description: string; value: string }] };
   };
 };

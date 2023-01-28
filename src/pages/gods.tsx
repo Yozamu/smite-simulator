@@ -3,7 +3,7 @@ import Gods from '../components/Gods';
 import { createSession } from './api/createSession';
 import { getGods } from './api/gods';
 
-const GodsPage = ({ gods }) => {
+const GodsPage = ({ gods = null }) => {
   return (
     <>
       <Head>
