@@ -2,9 +2,7 @@ import { BASE_PATH } from '../../helpers/constants';
 import { getUrlMandatoryPath } from '../../helpers/utils';
 
 export const getItems = async (session) => {
-  const res = await fetch(
-    `${BASE_PATH}/getitems${getUrlMandatoryPath(session, 'getitems')}/3`
-  );
+  const res = await fetch(`${BASE_PATH}/getitems${getUrlMandatoryPath(session, 'getitems')}`);
   const json = await res.json();
   return { data: json };
 };

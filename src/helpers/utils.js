@@ -16,12 +16,8 @@ export const getTimestamp = (date = new Date()) => {
 };
 
 export const getSignature = (methodName) => {
-  return md5(
-    process.env.DEV_ID + methodName + process.env.AUTH_KEY + getTimestamp()
-  );
+  return md5(process.env.DEV_ID + methodName + process.env.AUTH_KEY + getTimestamp());
 };
 
 export const getUrlMandatoryPath = (session, methodName) =>
-  `${RESPONSE_FORMAT}/${process.env.DEV_ID}/${getSignature(
-    methodName
-  )}/${session}/${getTimestamp()}`;
+  `${RESPONSE_FORMAT}/${process.env.DEV_ID}/${getSignature(methodName)}/${session}/${getTimestamp()}/1`; // 1 for English, 3 for French
