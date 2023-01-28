@@ -16,7 +16,7 @@ const Gods: React.FC<GodsProps> = ({ gods, ...props }) => {
   const selectGod = (god) => {
     setIsSnackbarOpen(true);
     setSelectedGod(god.Name);
-    localStorage.setItem('god', god.id);
+    localStorage.setItem('god', JSON.stringify(god));
   };
 
   return (

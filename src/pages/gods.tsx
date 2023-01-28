@@ -1,9 +1,17 @@
+import Head from 'next/head';
 import Gods from '../components/Gods';
 import { createSession } from './api/createSession';
 import { getGods } from './api/gods';
 
 const GodsPage = ({ gods }) => {
-  return <Gods gods={gods} />;
+  return (
+    <>
+      <Head>
+        <title>Smite simulator - Gods</title>
+      </Head>
+      <Gods gods={gods} />
+    </>
+  );
 };
 
 export default GodsPage;

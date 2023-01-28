@@ -1,53 +1,16 @@
-import { Button } from '@mui/material';
 import Head from 'next/head';
-import { useEffect } from 'react';
+import Home from '../components/Home';
 
-const Home = () => {
-  useEffect(() => {
-    const sessionValidity = new Date(localStorage.getItem('session-validity'));
-    if (sessionValidity < new Date()) {
-      fetch('/api/createSession')
-        .then((res) => res.json())
-        .then((json) => {
-          if (json.session !== '') {
-            localStorage.setItem('session', json.session);
-            localStorage.setItem('session-validity', json.expirationDate);
-          }
-        });
-    }
-  }, []);
-
-  const getSession = () => localStorage.getItem('session');
-
-  const fetchGods = async () => {
-    const res = await fetch(`/api/gods?session=${getSession()}`);
-    const json = await res.json();
-    console.log('GODS: ', json.data);
-  };
-
-  const fetchItems = async () => {
-    const res = await fetch(`/api/items?session=${getSession()}`);
-    const json = await res.json();
-    console.log('ITEMS: ', json.data);
-  };
-
+const HomePage = () => {
   return (
     <>
       <Head>
         <title>Smite simulator</title>
         <meta name="description" content="Check damage output in Smite" />
       </Head>
-      <main>
-        <div>Home page</div>
-        <Button onClick={fetchGods} variant="contained">
-          Log gods
-        </Button>
-        <Button onClick={fetchItems} variant="contained" color="secondary">
-          Log items
-        </Button>
-      </main>
+      <Home />
     </>
   );
 };
 
-export default Home;
+export default HomePage;
