@@ -17,7 +17,7 @@ const SelectedGod: React.FC<SelectedGodProps> = ({ god, ...props }) => {
   const aaDamage = aaRawDamage + aaBonusDamage;
 
   return (
-    <div className={props.className}>
+    <div className={`${props.className} container`}>
       <Image src={god.godIcon_URL} alt={god.Name} width={96} height={96} />
       <p>
         {god.Name} ({god.Pantheon}) - {god.Roles}
@@ -43,7 +43,6 @@ const SelectedGod: React.FC<SelectedGodProps> = ({ god, ...props }) => {
 };
 
 export default styled(SelectedGod)`
-  background-color: var(--main-color-light);
   display: flex;
   flex-direction: column;
   align-items: center;

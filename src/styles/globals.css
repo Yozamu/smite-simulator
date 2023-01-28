@@ -9,3 +9,8 @@
   color: var(--white);
   background-color: var(--main-color);
 }
+
+.container {
+  background-color: var(--main-color-light);
+  margin: 8px;
+}

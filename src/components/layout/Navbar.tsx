@@ -9,7 +9,7 @@ type NavbarProps = BaseProps & {};
 const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <Box sx={{ flexGrow: 1 }} className={props.className}>
-      <AppBar component="nav" className="container">
+      <AppBar component="nav" className="navbar">
         <Toolbar>
           <Image src="/smite-logo.png" alt="Smite" width={116} height={35} />
           <Link href="/">
@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
 };
 
 export default styled(Navbar)`
-  .container {
+  .navbar {
     background-color: #05111e;
 
     img {

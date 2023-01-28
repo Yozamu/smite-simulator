@@ -2,10 +2,10 @@ export type God = {
   // General information
   id: number;
   Name: string;
-  Ability_1: { Summary: string; URL: string };
-  Ability_2: { Summary: string; URL: string };
-  Ability_3: { Summary: string; URL: string };
-  Ability_4: { Summary: string; URL: string };
+  Ability_1: Ability;
+  Ability_2: Ability;
+  Ability_3: Ability;
+  Ability_4: Ability;
   Pantheon: string;
   Roles: string;
   godIcon_URL: string;
