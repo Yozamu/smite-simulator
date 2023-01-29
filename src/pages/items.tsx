@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Items from '../components/Items';
 import { createSession } from './api/createSession';
 import { getItems } from './api/items';
 
@@ -8,13 +9,7 @@ const ItemsPage = ({ items = null }) => {
       <Head>
         <title>Smite simulator - Gods</title>
       </Head>
-      <ul>
-        {items
-          .filter((item) => item.ActiveFlag === 'y')
-          .map((item) => (
-            <li key={item.ItemId}>{item.DeviceName}</li>
-          ))}
-      </ul>
+      <Items items={items} />
     </>
   );
 };

@@ -29,7 +29,7 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
         <>
           <SelectedGod god={godStats} />
           <GodAbilities abilities={abilities} />
-          <SelectedItems />
+          <SelectedItems items={items} />
         </>
       ) : (
         <em>Please select a god to start</em>

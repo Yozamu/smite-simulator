@@ -1,16 +1,8 @@
 {
-  "extends": ["plugin:storybook/recommended", "next", "next/core-web-vitals"],
+  "extends": ["next", "next/core-web-vitals"],
   "overrides": [
     {
-      "files": [
-        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)",
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(spec|test).[jt]s?(x)"
-      ],
-      "rules": {
-        // example of overriding a rule
-        "storybook/hierarchy-separator": "error"
-      }
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"]
     }
   ],
   "rules": {
