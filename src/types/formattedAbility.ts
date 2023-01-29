@@ -4,5 +4,5 @@ export type FormattedAbility = {
   cooldown: number;
   url: string;
   rawDamage: number;
-  damageWithProtection: Array<number>;
+  mitigatedDamage: number;
 };

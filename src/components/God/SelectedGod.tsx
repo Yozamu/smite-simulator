@@ -1,20 +1,15 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
+import { isGodMagic } from '../../helpers/game';
 import { BaseProps } from '../../types/baseProps';
-import { God } from '../../types/god';
+import { GodStats } from '../../types/godStats';
 
 type SelectedGodProps = BaseProps & {
-  god: God;
+  god: GodStats;
 };
 
 const SelectedGod: React.FC<SelectedGodProps> = ({ god, ...props }) => {
-  const isMagic = god.Roles === 'Guardian' || god.Roles === 'Mage';
-  const level = 20;
-  const aaDamageLine = god.basicAttack.itemDescription.menuitems[0].value;
-  const aaDLSplit = aaDamageLine.split(/[+% /]/);
-  const aaRawDamage = +aaDLSplit[0] + +aaDLSplit[3] * level;
-  const aaBonusDamage = (+aaDLSplit[6] * (isMagic ? god.MagicalPower : god.PhysicalPower)) / 100;
-  const aaDamage = aaRawDamage + aaBonusDamage;
+  const isMagic = isGodMagic(god);
 
   return (
     <div className={`${props.className} container`}>
@@ -23,20 +18,18 @@ const SelectedGod: React.FC<SelectedGodProps> = ({ god, ...props }) => {
         {god.Name} ({god.Pantheon}) - {god.Roles}
       </p>
       <ul>
-        <li>HP: {god.Health + god.HealthPerLevel * level}</li>
-        <li>MP: {god.Mana + god.ManaPerLevel * level}</li>
-        <li>HP5: {god.HealthPerFive + god.HP5PerLevel * level}</li>
-        <li>MP5: {god.ManaPerFive + god.MP5PerLevel * level}</li>
+        <li>HP: {god.Health}</li>
+        <li>MP: {god.Mana}</li>
+        <li>HP5: {god.HealthPerFive}</li>
+        <li>MP5: {god.ManaPerFive}</li>
         <li>Speed: {god.Speed}</li>
-        <li>Attack speed: {god.AttackSpeed + god.AttackSpeedPerLevel * level}</li>
-        {isMagic ? (
-          <li>Magical power: {god.MagicalPower + god.MagicalPowerPerLevel * level}</li>
-        ) : (
-          <li>Physical power: {god.PhysicalPower + god.PhysicalPowerPerLevel * level}</li>
-        )}
-        <li>Physical protection: {god.PhysicalProtection + god.PhysicalProtectionPerLevel * level}</li>
-        <li>Magic protection: {god.MagicProtection + god.MagicProtectionPerLevel * level}</li>
-        <li>Basic attack: {aaDamage}</li>
+        <li>Attack speed: {god.AttackSpeed}</li>
+        {isMagic ? <li>Magical power: {god.MagicalPower}</li> : <li>Physical power: {god.PhysicalPower}</li>}
+        <li>Physical protection: {god.PhysicalProtection}</li>
+        <li>Magic protection: {god.MagicProtection}</li>
+        <li>
+          AA: {god.basicAttack} raw, {god.basicAttackMitigated} mitigated
+        </li>
       </ul>
     </div>
   );

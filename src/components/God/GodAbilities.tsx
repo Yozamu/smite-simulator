@@ -15,13 +15,12 @@ const GodAbilities: React.FC<GodAbilitiesProps> = ({ abilities, ...props }) => {
           <Image src={ability.url} alt={ability.name} width={64} height={64} />
           <p>{ability.name}</p>
           <p>Cooldown: {ability.cooldown}</p>
-          <p>Raw damage: {ability.rawDamage}</p>
-          {ability.rawDamage > 0 &&
-            ability.damageWithProtection.map((damage, i) => (
-              <p key={i}>
-                Damage for {(i + 1) * 50} protection: {damage}
-              </p>
-            ))}
+          {ability.rawDamage > 0 && (
+            <>
+              <p>Raw damage: {ability.rawDamage}</p>
+              <p>Computed damage: {ability.mitigatedDamage}</p>
+            </>
+          )}
         </div>
       ))}
     </div>
