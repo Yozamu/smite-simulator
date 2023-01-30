@@ -10,9 +10,9 @@ type HomeProps = BaseProps & {};
 
 const Home: React.FC<HomeProps> = ({ ...props }) => {
   const [god, setGod] = useState(null);
+  const [items, setItems] = useState([]);
   const level = 20;
   const protection = 50;
-  const items = [];
   let abilities, godStats;
   if (god) {
     [abilities, godStats] = getGodAbilitiesAndStats(god, items, level, protection);
@@ -20,7 +20,9 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
 
   useEffect(() => {
     const godKey = localStorage.getItem('god');
+    const itemsKey = localStorage.getItem('items');
     if (godKey) setGod(JSON.parse(godKey));
+    if (itemsKey) setItems(JSON.parse(itemsKey));
   }, []);
 
   return (

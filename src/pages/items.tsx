@@ -22,6 +22,6 @@ export async function getStaticProps() {
 
   return {
     props: { items },
-    revalidate: 60 * 60 * 24, // revalidate each day
+    revalidate: 60 * 60 * 24 * 30, // revalidate each month
   };
 }

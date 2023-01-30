@@ -23,4 +23,12 @@ export type GodStats = {
   // AA
   basicAttack: number;
   basicAttackMitigated: number;
+  // Computed stats
+  Power: number;
+  FlatPene: number;
+  PercentPene: number;
+  FlatReduc: number;
+  PercentReduc: number;
+  CDR: number;
+  CCR: number;
 };
