@@ -40,4 +40,19 @@ const Home: React.FC<HomeProps> = ({ ...props }) => {
   );
 };
 
-export default styled(Home)``;
+export default styled(Home)`
+  em {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: var(--main-color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--white);
+    text-align: center;
+    font-size: 24px;
+    margin: 8px;
+  }
+`;

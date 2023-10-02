@@ -13,4 +13,7 @@
 .container {
   background-color: var(--main-color-light);
   margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

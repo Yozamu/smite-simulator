@@ -7,14 +7,51 @@ type GodAbilitiesProps = BaseProps & {
   abilities: Array<FormattedAbility>;
 };
 
+const GodAbilitiesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  .ability {
+    margin: 10px;
+    padding: 20px;
+    background-color: var(--navbar-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .ability-image {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--white);
+  }
+
+  .ability-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin: 8px;
+  }
+
+  .cooldown {
+    font-size: 14px;
+  }
+`;
+
 const GodAbilities: React.FC<GodAbilitiesProps> = ({ abilities, ...props }) => {
   return (
-    <div className={`${props.className} container`}>
+    <GodAbilitiesContainer className={`${props.className} container`}>
       {abilities.map((ability) => (
         <div key={ability.id} className="ability">
-          <Image src={ability.url} alt={ability.name} width={64} height={64} />
-          <p>{ability.name}</p>
-          <p>Cooldown: {ability.cooldown}</p>
+          <div className="ability-image">
+            <Image src={ability.url} alt={ability.name} width={64} height={64} />
+          </div>
+          <p className="ability-name">{ability.name}</p>
+          <p className="cooldown">Cooldown: {ability.cooldown}</p>
           {ability.rawDamage > 0 && (
             <>
               <p>Raw damage: {ability.rawDamage}</p>
@@ -23,15 +60,8 @@ const GodAbilities: React.FC<GodAbilitiesProps> = ({ abilities, ...props }) => {
           )}
         </div>
       ))}
-    </div>
+    </GodAbilitiesContainer>
   );
 };
 
-export default styled(GodAbilities)`
-  display: flex;
-
-  .ability {
-    margin: 4px;
-    text-align: center;
-  }
-`;
+export default GodAbilities;
