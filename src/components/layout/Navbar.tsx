@@ -21,6 +21,9 @@ const Navbar: React.FC<NavbarProps> = (props) => {
           <Link href="/items">
             <Button>Items</Button>
           </Link>
+          <a className="portfolio" href="https://www.fgoumot.com/" target="_blank" rel="noreferrer">
+            Portfolio
+          </a>
         </Toolbar>
       </AppBar>
     </Box>
@@ -45,6 +48,13 @@ export default styled(Navbar)`
       &:hover {
         color: var(--secondary-color);
       }
+    }
+
+    .portfolio {
+      color: white;
+      position: absolute;
+      top: 16px;
+      right: 16px;
     }
   }
 `;
