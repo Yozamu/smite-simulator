@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import { BaseProps } from '../../types/baseProps';
 import { FormattedAbility } from '../../types/formattedAbility';
 
@@ -48,7 +47,7 @@ const GodAbilities: React.FC<GodAbilitiesProps> = ({ abilities, ...props }) => {
       {abilities.map((ability) => (
         <div key={ability.id} className="ability">
           <div className="ability-image">
-            <Image src={ability.url} alt={ability.name} width={64} height={64} />
+            <img src={ability.url} alt={ability.name} width={64} height={64} />
           </div>
           <p className="ability-name">{ability.name}</p>
           <p className="cooldown">Cooldown: {ability.cooldown}</p>

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Button, Snackbar, SnackbarContent } from '@mui/material';
-import Image from 'next/image';
 import { useState } from 'react';
 import { BaseProps } from '../types/baseProps';
 import { God } from '../types/god';
@@ -23,7 +22,7 @@ const Gods: React.FC<GodsProps> = ({ gods, ...props }) => {
     <div className={props.className}>
       {gods?.map((god) => (
         <Button key={god.id} className="god" variant="contained" onClick={() => selectGod(god)}>
-          <Image src={god.godIcon_URL} alt={god.Name} width={96} height={96} />
+          <img src={god.godIcon_URL} alt={god.Name} width={96} height={96} />
           <br />
           {god.Name}
         </Button>

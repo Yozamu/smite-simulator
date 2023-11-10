@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import { BaseProps } from '../../types/baseProps';
 import { Item } from '../../types/item';
 
@@ -60,7 +59,7 @@ const SelectedItems: React.FC<SelectedItemsProps> = ({ items, ...props }) => {
           .filter((item) => item.ItemId)
           .map((item) => (
             <li key={item.ItemId} className="item">
-              <Image src={item.itemIcon_URL} alt={item.DeviceName} width={96} height={96} />
+              <img src={item.itemIcon_URL} alt={item.DeviceName} width={96} height={96} />
               <span className="item-name">{item.DeviceName}</span>
             </li>
           ))}

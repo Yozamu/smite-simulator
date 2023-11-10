@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { Button, Dialog, DialogTitle, Snackbar, SnackbarContent } from '@mui/material';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { BaseProps } from '../types/baseProps';
 import { Item } from '../types/item';
@@ -41,7 +40,7 @@ const Items: React.FC<ItemsProps> = ({ items, ...props }) => {
         .sort((a, b) => a.DeviceName.localeCompare(b.DeviceName))
         .map((item) => (
           <Button key={item.ItemId} className="item" variant="contained" onClick={() => selectItem(item)}>
-            <Image src={item.itemIcon_URL} alt={item.DeviceName} width={96} height={96} />
+            <img src={item.itemIcon_URL} alt={item.DeviceName} width={96} height={96} />
             <br />
             {item.DeviceName}
           </Button>
@@ -76,7 +75,7 @@ const Items: React.FC<ItemsProps> = ({ items, ...props }) => {
               key={itemSlot}
               onClick={() => validateItem(itemSlot)}
             >
-              {value.DeviceName && <Image src={value.itemIcon_URL} alt={value.DeviceName} width={96} height={96} />}
+              {value.DeviceName && <img src={value.itemIcon_URL} alt={value.DeviceName} width={96} height={96} />}
             </Button>
           ))}
         </div>

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import { isGodMagic } from '../../helpers/game';
 import { BaseProps } from '../../types/baseProps';
 import { GodStats } from '../../types/godStats';
@@ -25,7 +24,7 @@ const SelectedGod: React.FC<SelectedGodProps> = ({ god, ...props }) => {
 
   return (
     <div className={`${props.className} container`}>
-      <Image src={god.godIcon_URL} alt={god.Name} width={128} height={128} />
+      <img src={god.godIcon_URL} alt={god.Name} width={128} height={128} />
       <h2>
         {god.Name} ({god.Pantheon}) - {god.Roles}
       </h2>

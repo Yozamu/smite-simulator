@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { AppBar, Box, Button, Toolbar } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
 import { BaseProps } from '../../types/baseProps';
 
@@ -11,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
     <Box sx={{ flexGrow: 1 }} className={props.className}>
       <AppBar component="nav" className="navbar">
         <Toolbar>
-          <Image src="/smite-logo.png" alt="Smite" width={116} height={35} />
+          <img src="/smite-logo.png" alt="Smite" width={116} height={35} />
           <Link href="/">
             <Button>Home</Button>
           </Link>
